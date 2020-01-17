@@ -4,6 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink } from "react-router-dom";
+import avatorImg from "../../assets/image/admin.jpeg";
 
 const sidebar = props => {
   const classes = {
@@ -34,7 +36,17 @@ const sidebar = props => {
     "Settings",
     "Documentation"
   ];
-  const navLinks = "#";
+  const navLinks = [
+    "/dashboard",
+    "/category",
+    "/api1",
+    "/api2",
+    "/api3",
+    "/api4",
+    "/api5",
+    "/api6",
+    "/api7"
+  ];
 
   return (
     <>
@@ -46,7 +58,7 @@ const sidebar = props => {
       </Navbar.Brand>
       <div class="bottom-border pb-3">
         <Image
-          src="assets/image/admin.jpeg"
+          src={avatorImg}
           roundedCircle={true}
           style={{ width: "50px" }}
           className="mr-3"
@@ -58,16 +70,14 @@ const sidebar = props => {
       <Nav className={classes.sideNav}>
         {faIcons.map((value, index) => (
           <Nav.Item>
-            <Nav.Link
-              href={navLinks}
-              className={
-                classes.sideNavLink +
-                (value === "home" ? " current" : " sidebar-link")
-              }
+            <NavLink
+              to={navLinks[index]}
+              className={"nav-link " + classes.sideNavLink + " sidebar-link"}
+              activeClassName="current"
             >
               <FontAwesomeIcon icon={value} size="lg" className={classes.fa} />
               {menuName[index]}
-            </Nav.Link>
+            </NavLink>
           </Nav.Item>
         ))}
       </Nav>

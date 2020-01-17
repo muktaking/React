@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 
 // import Navbar from "./components/layouts/layouts";
 // import Modal from "./components/modal/modal";
-import Route from "./components/landing/route";
+import RoutePages from "./container/routePages";
 
 class App extends Component {
   state = {
@@ -24,7 +24,7 @@ class App extends Component {
           show={this.state.modalShow}
           modalHandleClose={this.modalCloseHandler}
         /> */}
-        <Route />
+        <RoutePages />
         {/* <Signup /> */}
       </BrowserRouter>
     );

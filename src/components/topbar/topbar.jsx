@@ -16,7 +16,7 @@ const topbar = props => {
     <Col className="bg-dark py-2 top-navbar">
       <Row className="align-items-center">
         <Col md={4}>
-          <h4 className="text-light text-uppercase mb-0">Dashboard</h4>
+          <h4 className="text-light text-uppercase mb-0">{props.pageName}</h4>
         </Col>
         <Col md={5}>
           <SearchForm
